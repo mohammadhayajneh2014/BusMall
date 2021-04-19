@@ -1,0 +1,39 @@
+  
+*{
+    box-sizing: border-box;
+}
+
+h2{
+    text-align: center;
+    color: chocolate;
+}
+body{
+    background-color: beige;
+}
+
+
+#container{
+    float: right;
+    width: 65%;
+}   
+#container2{
+    float:left ;
+    width: 35%;
+}
+img{
+     margin: 1px;
+    display: inline-block;
+    width: 20%;
+    height: 300px;
+}
+ul{
+    width: 100%;
+    background-color: cornsilk;
+}
+
+li{
+    font-size: 30px;
+    font-weight: bold;
+    list-style: none;
+    color: cornflowerblue;
+}
