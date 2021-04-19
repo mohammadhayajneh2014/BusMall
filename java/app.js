@@ -82,13 +82,21 @@ function handleClicking(event){
     renderThreeImages();
     console.log (Bus.Images);
   }else {
-    renderList();
+    //renderList();
     firstImageElement.removeEventListener('click', handleClicking);
     secondImageElement.removeEventListener('click',handleClicking);
     therdImageElement.removeEventListener('click',handleClicking);
    
   }
 }
+
+let button = document.getElementById('butn');
+button.addEventListener('click',shawing);
+function shawing (){
+renderList();
+button.removeEventListener('click',shawing);
+}
+
 
 function renderList(){
   let ul = document.getElementById('orderList');
