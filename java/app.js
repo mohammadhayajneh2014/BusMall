@@ -25,25 +25,25 @@ function Bus(name,source){
 
 Bus.Images =[];
 
-new Bus('bag','photo/bag.jpg');//[0]
-new Bus('banana','../photo/banana.jpg');//[1]
+new Bus('Bag','photo/bag.jpg');//[0]
+new Bus('Banana','../photo/banana.jpg');//[1]
 // firstImageElement.setAttribute("src",Bus.Images[1].source)
-new Bus('bathroom','../photo/bathroom.jpg');//[2]
-new Bus('boots','../photo/boots.jpg');//[3]
-new Bus('breakfast','../photo/breakfast.jpg');//[4]
-new Bus('bubblegum','../photo/bubblegum.jpg');//[5]
-new Bus('chair','photo/chair.jpg');//[6]
-new Bus('cthulhu','photo/cthulhu.jpg')//[7]
-new Bus('dog-duck','photo/dog-duck.jpg')//[8]
-new Bus('dragon','photo/dragon.jpg')//[9]
-new Bus('pen','photo/pen.jpg')//[10]
-new Bus('pet-sweep','photo/pet-sweep.jpg')//[11]
-new Bus('shark','photo/shark.jpg')//[12]
-new Bus('sweep','photo/sweep.png')//[13]
-new Bus('tauntaun','photo/tauntaun.jpg')//[14]
-new Bus('usb','photo/usb.gif')//[15]
-new Bus('water-can','photo/water-can.jpg')//[16]
-new Bus('wine-glass','photo/wine-glass.jpg')//[17]
+new Bus('Bathroom','../photo/bathroom.jpg');//[2]
+new Bus('Boots','../photo/boots.jpg');//[3]
+new Bus('Breakfast','../photo/breakfast.jpg');//[4]
+new Bus('Bubblegum','../photo/bubblegum.jpg');//[5]
+new Bus('Bhair','photo/chair.jpg');//[6]
+new Bus('Cthulhu','photo/cthulhu.jpg')//[7]
+new Bus('Dog-duck','photo/dog-duck.jpg')//[8]
+new Bus('Dragon','photo/dragon.jpg')//[9]
+new Bus('Pen','photo/pen.jpg')//[10]
+new Bus('Pet-sweep','photo/pet-sweep.jpg')//[11]
+new Bus('Shark','photo/shark.jpg')//[12]
+new Bus('Sweep','photo/sweep.png')//[13]
+new Bus('Tauntaun','photo/tauntaun.jpg')//[14]
+new Bus('Usb','photo/usb.gif')//[15]
+new Bus('Water-can','photo/water-can.jpg')//[16]
+new Bus('Wine-glass','photo/wine-glass.jpg')//[17]
 
 //console.log (Bus.Images);
 
@@ -163,14 +163,14 @@ function chart(){
               label: 'Number Of votes',
               data: arrayVotes,
               backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
+                  'red',
               ],
               borderWidth: 1
           },{
             label:'# of Shown',
             data: arrayAppers,
             backgroundColor:[
-              "rgb(0,255,255)"
+              "darkblue"
             ],
             borderWidth: 1
           }]

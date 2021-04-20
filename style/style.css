@@ -1,18 +1,31 @@
 *{
     box-sizing: border-box;
 }
+ header{
+ display: inline block; 
+ position: relative; 
+} 
+input{
+
+  float: left; 
+  margin-left: 10px;
+  margin-top: 10px; 
+}
 
 h2{
+    border-style: outset inset;
     text-align: center;
 
     color: rgb(226, 35, 35);
 }
 body{
-    background-color: rgb(232, 137, 245);
+    background-color: lightblue;
+    position: relative;
 }
 
 
 #container{
+    margin-top: 14px;
     float: right;
     width: 65%;
 }   
@@ -21,20 +34,26 @@ body{
     width: 35%;
 }
 img{
+    
      margin: 1px;
     display: inline-block;
     width: 20%;
     height: 300px;
 }
 ul{
+    margin-top: 15px;
     width: 100%;
-    background-color: rgb(8, 216, 243);
+    /* background-color: grey; */
 }
 
 li{
+    display: block;
+    border-style: outset inset;
+     background-color:rgb(161, 161, 161);
+
     font-size: 30px;
     font-weight: bold;
     list-style: none;
-    color: rgb(177, 50, 145);
+    color: black;
 
 }
