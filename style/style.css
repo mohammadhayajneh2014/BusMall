@@ -1,43 +1,41 @@
+
 *{
     box-sizing: border-box;
 }
 
 h2{
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    color: #9fd8df;
+
+    color: chocolate;
 }
 body{
-    background-color:#f0e4d7;
-    /*background-color: rgb(90, 197, 64);*/
+    background-color: beige;
 }
 
 
-#sec-one{ 
+#container{
     float: right;
-        width: 60%;
-        margin: auto;     
-}
- 
-
-#sec-two{
-    float: left;
-    width: 40%;
+    width: 65%;
+}   
+#container2{
+    float:left ;
+    width: 35%;
 }
 img{
+     margin: 1px;
     display: inline-block;
-    width: 25%;
-    height: 25%;
+    width: 20%;
+    height: 300px;
 }
 ul{
-    width: 60%;
-    background-color: #f5c0c0;
+    width: 100%;
+    background-color: cornsilk;
 }
 
 li{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     list-style: none;
-    color: #ff7171;
+    color: cornflowerblue;
+
 }
