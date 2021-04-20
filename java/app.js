@@ -29,8 +29,9 @@ let arrayRepet=[];
   firstImageElement.src = Bus.Images [firstIndex].source;
   secondImageElement.src = Bus.Images [secondIndex].source;
   therdImageElement.src = Bus.Images [therdIndex].source;
-   }*/
+ 
 
+  
 
 
 function Bus(name,source){
@@ -39,7 +40,9 @@ function Bus(name,source){
   this.votes = 0;
   this.appers=0;
  Bus.Images.push(this);
+
  arrayName.push(this.name);
+
 }
 
 Bus.Images =[];
@@ -66,6 +69,7 @@ new Bus('wine-glass','photo/wine-glass.jpg')//[17]
 console.log (Bus.Images);
 
 
+
 function renderThreeImages(){  
   firstIndex = genrateRandomIndex(); 
  secondIndex = genrateRandomIndex(); 
@@ -87,6 +91,7 @@ function renderThreeImages(){
   arrayRepet[1]=secondIndex;
   arrayRepet[2]=therdIndex;
 
+
   Bus.Images[firstIndex].appers++;
   Bus.Images[secondIndex].appers++;
   Bus.Images[therdIndex].appers++;
@@ -104,6 +109,7 @@ renderThreeImages();
 //secondImageElement.addEventListener('click',handleClicking);
 //therdImageElement.addEventListener('click',handleClicking);
 
+
 function handleClicking(event){
  console.log(event.target.id);
     counts++; 
@@ -118,6 +124,7 @@ function handleClicking(event){
     renderThreeImages();
     console.log (Bus.Images);
   }else {
+
   
     renderList();
     chart();
@@ -144,6 +151,7 @@ function renderList(){
   for(let i = 0 ; i < Bus.Images.length;i++){
     arrayVotes.push(Bus.Images[i].votes);
     arrayAppers.push(Bus.Images[i].appers);
+
     let li = document.createElement('li');
     ul.appendChild(li);
     li.textContent = Bus.Images[i].name+ " it has " +Bus.Images[i].votes+" Votes and was seen " +Bus.Images[i].appers +" times.";
@@ -155,6 +163,7 @@ function renderList(){
 function genrateRandomIndex(){
    return Math.floor(Math.random() * Bus.Images.length); 
                 
+
 }
 
 
@@ -183,3 +192,4 @@ function chart(){
       }
   })
   }
+
