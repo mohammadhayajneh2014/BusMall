@@ -1,6 +1,4 @@
 'use strict';
-
-
 let firstImageElement = document.getElementById('first-image');
 let secondImageElement = document.getElementById('second-image');
 let therdImageElement = document.getElementById('therd-image');
@@ -13,26 +11,7 @@ let secondIndex;
 let therdIndex;
 let arrayName=[];
 let arrayRepet=[];
-
-/*function read1(){
-  arrayRepet[firstIndex,secondIndex,therdIndex]
-  
-   while(firstIndex === secondIndex||therdIndex=== firstIndex||secondIndex===therdIndex){
-    firstIndex = genrateRandomIndex();
-    secondIndex=genrateRandomIndex();
-  }
-
-  Bus.Images[firstIndex].appers++;
-  Bus.Images[secondIndex].appers++;
-  Bus.Images[therdIndex].appers++;
-  
-  firstImageElement.src = Bus.Images [firstIndex].source;
-  secondImageElement.src = Bus.Images [secondIndex].source;
-  therdImageElement.src = Bus.Images [therdIndex].source;
- 
-
-  
-
+let arrayOfVotesShown=[];
 
 function Bus(name,source){
   this.name= name;
@@ -42,17 +21,17 @@ function Bus(name,source){
  Bus.Images.push(this);
 
  arrayName.push(this.name);
-
 }
 
 Bus.Images =[];
 
-new Bus('bag','photo/bag.jpg');//[0]
-new Bus('banana','photo/banana.jpg');//[1]
-new Bus('bathroom','photo/bathroom.jpg');//[2]
-new Bus('boots','photo/boots.jpg');//[3]
-new Bus('breakfast','photo/breakfast.jpg');//[4]
-new Bus('bubblegum','photo/bubblegum.jpg');//[5]
+new Bus('bag','../salmon.png');//[0]
+new Bus('banana','../photo/banana.jpg');//[1]
+// firstImageElement.setAttribute("src",Bus.Images[1].source)
+new Bus('bathroom','../photo/bathroom.jpg');//[2]
+new Bus('boots','../photo/boots.jpg');//[3]
+new Bus('breakfast','../photo/breakfast.jpg');//[4]
+new Bus('bubblegum','../photo/bubblegum.jpg');//[5]
 new Bus('chair','photo/chair.jpg');//[6]
 new Bus('cthulhu','photo/cthulhu.jpg')//[7]
 new Bus('dog-duck','photo/dog-duck.jpg')//[8]
@@ -66,21 +45,12 @@ new Bus('usb','photo/usb.gif')//[15]
 new Bus('water-can','photo/water-can.jpg')//[16]
 new Bus('wine-glass','photo/wine-glass.jpg')//[17]
 
-console.log (Bus.Images);
-
-
+//console.log (Bus.Images);
 
 function renderThreeImages(){  
   firstIndex = genrateRandomIndex(); 
  secondIndex = genrateRandomIndex(); 
  therdIndex = genrateRandomIndex();
- /* var n = arrayRepet.includes(firstIndex);
- var b = arrayRepet.includes(secondIndex);
- var a = arrayRepet.includes(therdIndex);
- if (a||b||n) {
-  */
-
- //arrayRepet[firstIndex,secondIndex,therdIndex]
   
   while(firstIndex === secondIndex||therdIndex=== firstIndex||secondIndex===therdIndex||arrayRepet.includes(firstIndex)||arrayRepet.includes(secondIndex)||arrayRepet.includes(therdIndex)){
     firstIndex = genrateRandomIndex();
@@ -91,7 +61,6 @@ function renderThreeImages(){
   arrayRepet[1]=secondIndex;
   arrayRepet[2]=therdIndex;
 
-
   Bus.Images[firstIndex].appers++;
   Bus.Images[secondIndex].appers++;
   Bus.Images[therdIndex].appers++;
@@ -100,16 +69,12 @@ function renderThreeImages(){
   secondImageElement.src = Bus.Images [secondIndex].source;
   therdImageElement.src = Bus.Images [therdIndex].source;
 }
-
 renderThreeImages();
-
   container.addEventListener('click',handleClicking);
-// }
+ 
 //firstImageElement.addEventListener('click', handleClicking);
 //secondImageElement.addEventListener('click',handleClicking);
 //therdImageElement.addEventListener('click',handleClicking);
-
-
 function handleClicking(event){
  console.log(event.target.id);
     counts++; 
@@ -121,8 +86,15 @@ function handleClicking(event){
     }else if(event.target.id ==='therd-image'){
         Bus.Images [therdIndex].votes++;
     }
+    saveToLocalStorage();
     renderThreeImages();
-    console.log (Bus.Images);
+    //console.log (Bus.Images);
+    
+    // for(let i = 0 ; i < Bus.Images.length;i++){
+    //    arrayOfVotesShown[i]=(Bus.Images[i].votes);
+    //     }
+    //     console.log(arrayOfVotesShown);
+        
   }else {
 
   
@@ -132,17 +104,36 @@ function handleClicking(event){
    //firstImageElement.removeEventListener('click', handleClicking);
     //secondImageElement.removeEventListener('click',handleClicking);
     //therdImageElement.removeEventListener('click',handleClicking);
-   
   }
-  
 }
-
 /* let button = document.getElementById('butn');
 button.addEventListener('click',shawing);
 function shawing (){
 renderList();
 button.removeEventListener('click',shawing);
 } */
+
+// let arrayOfVotesShown=[];
+// for(let i = 0 ; i < Bus.Images.length;i++){
+//   arrayOfVotesShown.push(Bus.Images[i].votes);
+// }
+function saveToLocalStorage(){
+  let stringOfVotes = JSON.stringify(Bus.Images);
+
+  localStorage.setItem('number of votes', stringOfVotes); 
+}
+
+function getFromOrderLocalStorage(){
+  let data = localStorage.getItem('number of votes');
+  console.log(data);
+  let order = JSON.parse(data);
+  console.log(order);
+  if(order !== null){
+    Bus.Images = order;
+  }
+}
+getFromOrderLocalStorage();
+
 
 let arrayVotes = [];
 let arrayAppers = [];
@@ -158,15 +149,9 @@ function renderList(){
   }
 }
 
-
-
 function genrateRandomIndex(){
    return Math.floor(Math.random() * Bus.Images.length); 
-                
-
 }
-
-
 
 function chart(){
   let ctx = document.getElementById("myChart")
