@@ -25,7 +25,7 @@ function Bus(name,source){
 
 Bus.Images =[];
 
-new Bus('bag','../salmon.png');//[0]
+new Bus('bag','photo/bag.jpg');//[0]
 new Bus('banana','../photo/banana.jpg');//[1]
 // firstImageElement.setAttribute("src",Bus.Images[1].source)
 new Bus('bathroom','../photo/bathroom.jpg');//[2]
