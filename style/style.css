@@ -5,10 +5,10 @@
 h2{
     text-align: center;
 
-    color: chocolate;
+    color: rgb(226, 35, 35);
 }
 body{
-    background-color: beige;
+    background-color: rgb(232, 137, 245);
 }
 
 
@@ -28,13 +28,13 @@ img{
 }
 ul{
     width: 100%;
-    background-color: cornsilk;
+    background-color: rgb(8, 216, 243);
 }
 
 li{
     font-size: 30px;
     font-weight: bold;
     list-style: none;
-    color: cornflowerblue;
+    color: rgb(177, 50, 145);
 
 }
